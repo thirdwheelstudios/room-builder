@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref } from 'vue'
+import * as konva from 'konva'
 
 const configKonva = ref({ width: 300, height: 300 })
 
@@ -67,8 +68,7 @@ const doorShapes = [
     stroke: 'blue',
     strokeWidth: 4,
     draggable: true,
-    // eslint-disable-next-line
-    sceneFunc: (context, shape) => {
+    sceneFunc: (context: konva.default.Context, shape: konva.default.Shape) => {
       const x = 274
       const y = 72
 
