@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 import * as konva from 'konva'
+import DoorShape from './components/shapes/DoorShape.vue'
 
 const configKonva = ref({ width: 300, height: 300 })
 
@@ -103,7 +104,8 @@ const shapesList = ref([...doorShapes])
         :stroke="rect.stroke"
         :stroke-width="rect.strokeWidth"
         :shadow-blur="rect.shadowBlur"
-        :draggable="true" />
+        :draggable="true"
+      />
       <v-shape
         v-for="shape of shapesList"
         :config="{
@@ -113,8 +115,10 @@ const shapesList = ref([...doorShapes])
           strokeWidth: shape.strokeWidth,
         }"
         :draggable="shape.draggable"
-      ></v-shape
-    ></v-layer>
+      ></v-shape>
+
+      <DoorShape />
+    </v-layer>
   </v-stage>
 </template>
 
