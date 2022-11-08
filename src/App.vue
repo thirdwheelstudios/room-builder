@@ -117,7 +117,7 @@ const shapesList = ref([...doorShapes])
         :draggable="shape.draggable"
       ></v-shape>
 
-      <DoorShape />
+      <DoorShape :draggable="true" :external-door="true" />
     </v-layer>
   </v-stage>
 </template>
